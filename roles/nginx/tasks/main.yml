@@ -10,6 +10,12 @@
     name: nginx
     state: started
   become: yes
+  
+- name: Create /var/www/html directory
+  file:
+    path: /var/www/html
+    state: directory
+  become: yes
 
 - name: index
   template:
